@@ -19,6 +19,8 @@ function maxChar(str){
             maxChar = char;
         }
     }
+    console.log(charMap);
+    console.log(max, maxChar);
     return maxChar;
 }
 // // Alternative way to loop through the object, turning object into array of entries
@@ -29,4 +31,6 @@ function maxChar(str){
 //     }
 // });
 
-console.log(maxChar("abccccccd")); // "a"
+console.log(maxChar("abccccccd")); // "c"
+console.log(maxChar("apple 1231111")); // "1"
+console.log(maxChar("")); // ""
