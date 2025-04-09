@@ -1,11 +1,23 @@
-function anagrams(str1, str2){
-    const charMap1 = {};
-    str1 = str1.toLowerCase().replace(/[\W]/g, '');
+function charMap(str){
+    const charMap = {};
+    str = str.toLowerCase().replace(/[\W]/g, '');
 
-    for (let char of str1){
-        charMap1[char] = (charMap1[char] || 0) + 1;
+    for (let char of str){
+        charMap[char] = (charMap[char] || 0) + 1;
     }
-    return charMap1;
+    return charMap;
+}
+
+function anagrams(str1, str2){
+    const charMap1 = charMap(str1);
+    const charMap2 = charMap(str2);
+    for (let key in charMap1){
+        console.log(charMap2[key]);
+        if (charMap1[key] !== charMap2[key]){
+            return false;
+        }
+    }
+    return true;
 }
 // Test the function
-console.log(anagrams("listen", "inlets")); // ["inlets", "enlist"]
+console.log(anagrams("listen", "inlet")); // ["inlets", "enlist"]
