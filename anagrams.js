@@ -1,12 +1,11 @@
-function anagrams(word){
-    const anagrams = ["enlist", "google", "inlets", "banana"];
+function anagrams(str1, str2){
+    const charMap1 = {};
+    str1 = str1.toLowerCase().replace(/[\W]/g, '');
 
-    const result = anagrams.filter(anagram => {
-        return anagram.split("").sort().join("") === word.split("").sort().join("");
-    });
-
-    console.log(result); // ["inlets"]
-    return result; 
+    for (let char of str1){
+        charMap1[char] = (charMap1[char] || 0) + 1;
+    }
+    return charMap1;
 }
 // Test the function
-anagrams("listen"); // ["inlets", "enlist"]
+console.log(anagrams("listen", "inlets")); // ["inlets", "enlist"]
