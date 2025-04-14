@@ -1,10 +1,13 @@
 function loops(n) {
-    for (let i = 0; i < n; i++) {
-        console.log('i:', i);
-        for (let j = 0; j < n; j++) {
-            console.log('j:', j);
+    for (let ro = 0; ro < n; ro++) {
+        // console.log('row:', ro);
+        let row = '';
+        for (let col = 0; col < n; col++) {
+            // console.log('col:', col);
+            row += '#';
             // console.log(i, j);   
         }
+        console.log(row);
     }
 }
 
